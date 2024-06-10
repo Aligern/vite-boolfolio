@@ -1,5 +1,7 @@
 <template>
-  <h1>Hello</h1>
+  <ul>
+    <li v-for="project in projects" :key="project.id"> {{ project.title }}</li>
+  </ul>
 </template>
 
 <script>
@@ -17,6 +19,7 @@ export default {
     getAllProjects(){
       axios.get(this.store.apiBaseUrl + '/projects').then((res) => {
         console.log(res.data);
+        this.projects = res.data.results;
       });
     }
   },
