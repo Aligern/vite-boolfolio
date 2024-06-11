@@ -1,12 +1,12 @@
 <template>
-    <div class="container m-auto">
-        <h1>Home</h1>
+    <div>
+
     </div>
 </template>
 
 <script>
     export default {
-        name: 'AppHome',
+        
     }
 </script>
 

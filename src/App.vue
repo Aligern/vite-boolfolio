@@ -1,36 +1,37 @@
 <template>
+    <h1>Boolfolio</h1>
 
 
-  <ul>
-    <li v-for="project in projects" :key="project.id"> {{ project.title }}</li>
-  </ul>
+    <ul>
+      <li v-for="(project, index) in menuProjects" :key="index">
+        <router-link :to="{ name: project.routeName }" class="nav-link">
+            {{ project.label }} 
+        </router-link>
+      </li>
+    </ul>
 
     <main class="container">
+      <router-view></router-view>
     </main>
 
 </template>
 
 <script>
-import {store} from './store.js'
-import axios from 'axios'
 export default {
   name: 'App',
   data() {
     return {
-      store,
-      projects: []
+      menuProjects: [
+        {
+          label: 'Home',
+          routeName: 'home',
+        },
+        {
+          label: 'Projects',
+          routeName: 'projects',
+        },
+      ]
     }
-  },
-  methods: {
-    getAllProjects(){
-      axios.get(this.store.apiBaseUrl + '/projects').then((res) => {
-        console.log(res.data);
-        this.projects = res.data.results;
-      });
-    }
-  },
-  mounted() {
-    this.getAllProjects();
   }
 }
 </script>

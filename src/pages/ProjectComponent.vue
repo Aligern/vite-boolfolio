@@ -1,12 +1,12 @@
 <template>
-    <div class="container m-auto">
-        <h1>Home</h1>
+    <div>
+        <h1> ProjectComponent</h1>
     </div>
 </template>
 
 <script>
     export default {
-        name: 'AppHome',
+        name: 'ProjectComponent',
     }
 </script>
 
