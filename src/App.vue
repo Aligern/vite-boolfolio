@@ -1,7 +1,13 @@
 <template>
+
+
   <ul>
     <li v-for="project in projects" :key="project.id"> {{ project.title }}</li>
   </ul>
+
+    <main class="container">
+    </main>
+
 </template>
 
 <script>

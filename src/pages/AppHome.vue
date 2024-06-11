@@ -1,11 +1,12 @@
 <template>
-    <div>
-
-    </div>
+    <section>
+        <h1>AppHome</h1>
+    </section>
 </template>
 
 <script>
     export default {
+        name: 'AppHome',
         
     }
 </script>
