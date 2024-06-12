@@ -1,12 +1,14 @@
 <template>
     <div class="container">
         <ul id="projects-list">
+            <!-- for each of our project we print a list item with a link -->
             <li v-for="project in projects" :key="project.id"> {{ project.title }}
                 <div>{{ project.description?.name }}</div>
-
+                <!-- here we give the link remanding to the project detail -->
                 <router-link :to="{ name: 'project-detail', params: { slug: project.slug } }">Read more about this project</router-link>
             </li>
         </ul>
+        <!-- this button sends us to the next page -->
         <button @click="getAllProjects()" class="btn btn-primary">Next Page</button>
     </div>
 </template>
