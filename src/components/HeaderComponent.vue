@@ -1,16 +1,20 @@
 <template>
-    <nav class="nav d-flex justify-content-between">
-            <div>
-                <h1>logo</h1>
+    <header>
+        <nav class="nav d-flex justify-content-between">
+            <div id="nav-left">
+                <h1 class="ps-2">Boolfolio</h1>
             </div>
-            <div>
-                <button v-for="(project, index) in menuProjects" :key="index">
-                    <router-link :to="{ name: project.routeName }" class="nav-link btn">
+
+            <div id="nav-right">
+                <button class="btn btn-success mx-2" v-for="(project, index) in menuProjects" :key="index">
+                    <router-link class="text-white text-decoration-none" :to="{ name: project.routeName }" >
                         {{ project.label }} 
                     </router-link>
                 </button>
             </div>
-    </nav>
+
+        </nav>
+    </header>
 </template>
 
 <script>

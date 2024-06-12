@@ -1,6 +1,5 @@
 <template>
     <HeaderComponent />
-    <h1>Boolfolio</h1>
     <main class="container">
       <router-view></router-view>
     </main>
