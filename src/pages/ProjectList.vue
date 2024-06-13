@@ -1,27 +1,26 @@
 <template>
-    <div class="container">
-        <ul id="projects-list">
-            <!-- for each of our project we print a list item with a link -->
-            <li v-for="project in projects" :key="project.id"> {{ project.title }}
-                <div>{{ project.description?.name }}</div>
-                <!-- here we give the link remanding to the project detail -->
-                <router-link :to="{ name: 'project-detail', params: { slug: project.slug } }">Read more about this project</router-link>
-            </li>
-        </ul>
-        <!-- this button sends us to the next page -->
-        <button @click="getAllProjects()" class="btn btn-primary">Next Page</button>
-    </div>
+   <h1>All Projects</h1>
+   <div class="row">
+     <div class="col-12 col-lg-6" v-for="project in projects" :key="project.id" >
+       <ProjectCardComponent :item = "project"/>
+     </div>
+  </div>
+    
 </template>
 
 <script>
     import { store } from '../store.js';
     import axios from 'axios';
+    import ProjectCardComponent from '../components/ProjectCardComponent.vue';
     export default {
         name: 'ProjectList',
+        components: {
+            ProjectCardComponent
+        },
         data() {
     return {
       store,
-      projects: []
+      projects: [],
     }
   },
   methods: {

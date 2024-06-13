@@ -4,7 +4,6 @@
             <div id="nav-left">
                 <h1 class="ps-2">Boolfolio</h1>
             </div>
-
             <div id="nav-right">
                 <button class="btn btn-success mx-2" v-for="(project, index) in menuProjects" :key="index">
                     <router-link class="text-white text-decoration-none" :to="{ name: project.routeName }" >
@@ -12,7 +11,9 @@
                     </router-link>
                 </button>
             </div>
-
+            <div>
+                <a href="http://localhost:8000" class="nav-link text-white">Admin Area</a>
+            </div>
         </nav>
     </header>
 </template>
@@ -31,7 +32,8 @@
                 label: 'Projects',
                 routeName: 'projects',
             },
-        ]
+        ],
+        show: false
     }
   }
 }

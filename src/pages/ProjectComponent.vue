@@ -28,12 +28,20 @@
             }).catch((error)=>{
                 //console.log(error);
                 //console.log(error.response.data);
-                this.$router.push({ name: 'not-found' });
+                this.$router.push({ name: 'not-found' }); // we redirect to the not found page if the project doesn't exist
             }).finally();
-        } 
+        }
         },
-        mounted() {
-            this.getProject();
+        mounted(){
+                this.getProject();
+            },
+        created() {
+            this.$watch(
+                () => this.$route.params,
+                (toParams, previousParams) => {
+                    this.getProject();
+                }
+            )
         }
     }
 </script>
